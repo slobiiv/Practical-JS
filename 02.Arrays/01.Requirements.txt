@@ -1,0 +1,6 @@
+  V1
+    It should have a place to store to-dos
+    It should have a way to display to-dos
+    It should have a way to add new to-dos
+    It should have a way to change a to-do
+    It should have a way to delete a to-do
