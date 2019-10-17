@@ -1,1 +1,1 @@
-var todos = ['item 1','item 2', 'item 3']; // creating a list o items - an Array
+var todos = ['item 1','item 2', 'item 3']; // creating a list of items and storing in a variable is an Array
