@@ -1,13 +1,16 @@
 var todoList = {
-  todos: ['item 1','item 2', 'item 3'],
+  todos: [],
   displayTodos: function() {
     console.log('My todos: ', this.todos);
   },
-  addTodos: function(todo) {
-    this.todos.push(todo);
+  addTodos: function(todoText) {
+    this.todos.push({
+      todoText: todoText, // first todoText is a name of the property, and second todoText will be a value added through parameter
+      completed: false
+    });
     this.displayTodos();
   },
-  changeTodo: function(position,newValue) {
+  changeTodo: function(newValue) {
     this.todos[position] = newValue; 
     this.displayTodos();
   },
