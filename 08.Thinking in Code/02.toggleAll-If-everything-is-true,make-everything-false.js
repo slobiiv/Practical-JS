@@ -46,7 +46,7 @@ var todoList = {
     var allTodos = this.todos.length;
     completedTodos = 0;
     for(var i = 0; i < allTodos; i++) { 
-      if(this.todos[i].completed = true) {
+      if(this.todos[i].completed === true) {
         completedTodos++; 
       }
     }
@@ -56,12 +56,13 @@ var todoList = {
           this.todos[i].completed = false;
         }
       }
-      // Case 2: if everything is false, make everything true
+      // Case 2: Else ,if everything is false, make everything true
       else {
         for(var i = 0; i < allTodos; i++) {
           this.todos[i].completed = true;
-        }
+        } 
       }
+
       this.displayTodos();
   }
-}
+};
