@@ -68,10 +68,18 @@ var todoList = {
 };
 
 
-// Clicking display todos should run totoList.displayTodos
+// Clicking "Display todos" should run totoList.displayTodos
   // 1. We want to get access to the display todos button
 var displayTodosButton = document.getElementById('displayTodosButton');
   // 2. We want to run displayTodos method, when someone clicks the display todos button
 displayTodosButton.addEventListener('click', function() {
   todoList.displayTodos();
 });
+
+//  Clicking “Toggle all” should run todoList.toggleAll
+  // 1. We want to get access to the "Toggle All" button
+  var toggleAllButton = document.getElementById('toggleAllButton');
+  // 2. We want to run "toggleAll" method, when someone clicks the "Toggle All" button
+  toggleAllButton.addEventListener('click', function() {
+    todoList.toggleAll();
+  });
