@@ -15,13 +15,24 @@
   </div>
 
   <div><!--  There should be a button for adding todos -->
-    <input id="addTodoTextInput" type="text">
     <button onclick="handlers.addTodo()">Add Todo</button>
+    <input id="addTodoTextInput" type="text">
   </div>
+
+  <div><!--  There should be a button to toggleCompleted todos -->
+    <button onclick="handlers.toggleCompleted()">Completed</button>
+    <input id="toggleCompletedPositionInput" type="number" size="2" > 
+  </div>
+
   <div><!--   There should be a button for changing todos -->
     <button onclick="handlers.changeTodo()">Change Todo</button>
-    <input id="changeTodoPositionInput" type="number">  
+    <input id="changeTodoPositionInput" type="number" size="2" >  
     <input id="changeTodoTextInput" type="text">  
+  </div>
+
+  <div><!--  There should be a button for deleting todos -->
+    <button onclick="handlers.deleteTodo()">Delete Todo</button>
+    <input id="deleteTodoPositionInput" type="number" size='2'>
   </div>
 
   <script src="script.js"></script>
