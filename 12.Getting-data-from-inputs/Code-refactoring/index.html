@@ -9,8 +9,21 @@
 </head>
 <body>
   <h1>Hello, Slobodan!<br/> Let's organize your day!</h1>
-  <button onclick="handlers.displayTodos()">Display todos</button>
-  <button onclick="handlers.toggleAll()">Toggle All</button>
+  <div>
+    <button onclick="handlers.displayTodos()">Display todos</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+  </div>
+
+  <div><!--  There should be a button for adding todos -->
+    <input id="addTodoTextInput" type="text">
+    <button onclick="handlers.addTodo()">Add Todo</button>
+  </div>
+  <div><!--   There should be a button for changing todos -->
+    <button onclick="handlers.changeTodo()">Change Todo</button>
+    <input id="changeTodoPositionInput" type="number">  
+    <input id="changeTodoTextInput" type="text">  
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ var todoList = {
       }
     }
   },
-  addTodos: function(todoText) {
+  addTodo: function(todoText) {
     this.todos.push({
       todoText: todoText,
       completed: false
@@ -67,13 +67,18 @@ var todoList = {
 };
 
 
-// This is same as the code with eventLisetners
+
 var handlers = {
   displayTodos: function() {
     todoList.displayTodos();
   },
   toggleAll : function() {
     todoList.toggleAll();
+  },
+  addTodo: function(){
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = ''; // delete the text input
   }
 };
 /*  same as the code above:

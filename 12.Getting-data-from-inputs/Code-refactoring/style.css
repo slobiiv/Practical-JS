@@ -1,0 +1,27 @@
+body {
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+div {
+  padding: 1rem;
+}
+div button {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 3px;
+  background-color: #1788e4;
+  color: white;
+  margin: 0.3rem;
+}
+div button:hover {
+  background-color: #116ab3;
+
+}
+div input {
+  margin: 0 0.5rem;
+  padding: 6px 15px;
+  color: black;
+}
