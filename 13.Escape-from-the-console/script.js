@@ -1,20 +1,38 @@
 var todoList = {
   todos: [],
+  displayTodos: function() {
+    if(this.todos.length === 0 ) {
+      console.log('Your Todo list is empty');
+    } else {
+      console.log('My Todos: ');
+      for(var i = 0; i < this.todos.length;i++) {
+        if(this.todos[i].completed) { // if a specific object is completed (true)
+          console.log('(x)', this.todos[i].todoText);
+        } else {
+          console.log('( )', this.todos[i].todoText); // or false
+        }
+      }
+    }
+  },
   addTodo: function(todoText) {
     this.todos.push({
       todoText: todoText,
       completed: false
     });
+    this.displayTodos();
   },
   changeTodo: function(position, todoText) {
     this.todos[position].todoText = todoText; 
+    this.displayTodos();
   },
   deleteTodo: function(position) {
     this.todos.splice(position, 1);
+    this.displayTodos();
   },
   toggleCompleted: function(position) {
     var todo = this.todos[position];
     todo.completed = !todo.completed;  // if false change to true, and opposite (!)
+    this.displayTodos();
   },
   /* Poenta toggleAll je da pozivom ove funkcije, sve neodradjene zadatke, oznacimo da su odradjeni i obrnuto.
       - prvo - radi lakseg koriscenja, stavljamo duzinu array u variablu.    
@@ -44,17 +62,20 @@ var todoList = {
           this.todos[i].completed = true;
         } 
       }
+      this.displayTodos();
   }
 };
 
 
 
 var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
   addTodo: function(){
     var addTodoTextInput = document.getElementById('addTodoTextInput');
     todoList.addTodo(addTodoTextInput.value);
     addTodoTextInput.value = ''; // delete the text input
-    view.displayTodos();
   },
   changeTodo: function() {
     var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
@@ -62,53 +83,28 @@ var handlers = {
     todoList.changeTodo(changeTodoPositionInput.valueAsNumber,changeTodoTextInput.value); // valueAsNumber, because value uses string
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = '';
-    view.displayTodos();
   },
   deleteTodo: function() {
     var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = '';
-    view.displayTodos();
   },
   toggleCompleted: function() {
     var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
     todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
     toggleCompletedPositionInput.value = '';
-    view.displayTodos();
   },
   toggleAll : function() {
     todoList.toggleAll();
-    view.displayTodos();
   }
 };
-
-/* 
-1.)There should be a li element for every todo
-2.)Each li element should contain .todoText
-3.)Each li element should show .completed 
+/*  same as the code above:
+var displayTodosButton = document.getElementById('displayTodosButton');
+displayTodosButton.addEventListener('click', function() {
+todoList.displayTodos();
+});
+var toggleAllButton = document.getElementById('toggleAllButton');
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
 */
-
-// view - taking todos array and displays to screen
-var view = {
-  displayTodos: function() {
-    var todosUl = document.querySelector('ul');
-    todosUl.innerHTML = '';
-    // 1.)There should be a li element for every todo:
-    // This loop is adding a new <li> element depending on the array length
-    for(var i = 0; i < todoList.todos.length; i++) {
-      var todoLi = document.createElement('li');
-      var todo = todoList.todos[i]
-      // 3.)Each li element should show .completed 
-      var todoTextWithCompletion = '';
-      if(todo.completed === true) {
-        todoTextWithCompletion = '( x )' + ' ' + todo.todoText;
-      } else {
-        todoTextWithCompletion = '(   )' + ' ' + todo.todoText;
-      }
-      // 2.)Each li element should contain .todoText and Each li element should show .completed 
-      todoLi.textContent = todoTextWithCompletion;
-      todosUl.appendChild(todoLi);
-      
-    }
-  }
-}

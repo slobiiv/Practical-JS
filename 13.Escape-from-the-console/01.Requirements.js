@@ -1,0 +1,5 @@
+/* 
+  There shouuld be an li element for every todo
+  Each li element should contain .todoText
+  Eachh li element should show .completed
+*/
