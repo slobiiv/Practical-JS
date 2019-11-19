@@ -19,4 +19,5 @@
   function sayHiTo(person) {
     console.log('hi', person);
   }
-  sayHiTo('Relja'); // 'Relja' is assigned to a variable 'person'. person = 'Relja';
+  sayHiTo('Relja'); // 'Relja' is assigned to a variable 'person'. 
+  // person = 'Relja';
