@@ -1,5 +1,5 @@
 /* 
-    It store the todos array on an object 
+    It should store the todos array on an object 
     It should have a display Todos method 
     It should have an addTodo method
     It should have a changeTodo method

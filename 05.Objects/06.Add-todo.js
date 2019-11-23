@@ -3,6 +3,7 @@ var todoList = {
   displayTodos: function() {
     console.log('My todos: ', this.todos);
   },
+  // It should have an addTodo method
   addTodos: function(todo) {
     this.todos.push(todo);
     this.displayTodos();
