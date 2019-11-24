@@ -1,1 +1,4 @@
 Ability = Process * Time
+
+You can't change Time
+But you can focus and have a better process today!

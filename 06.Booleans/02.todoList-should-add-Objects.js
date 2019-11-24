@@ -4,14 +4,17 @@ var todoList = {
     console.log('My todos: ', this.todos);
   },
   addTodos: function(todoText) {
-    this.todos.push({
-      todoText: todoText, // first todoText is a name of the property, and second todoText will be a value added through parameter
-      completed: false
-    });
+    // todoList should add Objects - todoList.addTodos('Change diapers');
+    this.todos.push (
+      {
+      todoText: todoText,
+      completed: false // we want to know if the task is completed or not
+    }
+    );
     this.displayTodos();
   },
-  changeTodo: function(newValue) {
-    this.todos[position] = newValue; 
+  changeTodo: function(position, todoText) {
+    this.todos[position] = todoText; 
     this.displayTodos();
   },
   deleteTodo: function(position) {
@@ -19,3 +22,5 @@ var todoList = {
     this.displayTodos();
   }
 }
+
+// We want to represent more DATA, that's why we are using Objects
