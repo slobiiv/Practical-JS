@@ -2,6 +2,7 @@ var todoList = {
   todos: [],
   displayTodos: function() {
     console.log('My Todos: ');
+    // displayTodos should show .todoText 
     for(var i = 0; i < this.todos.length;i++) {
       console.log('My todos: ', this.todos[i].todoText);
     }

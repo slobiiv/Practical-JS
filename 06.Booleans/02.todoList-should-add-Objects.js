@@ -1,5 +1,9 @@
 var todoList = {
-  todos: [],
+  todos: [
+    // (example)
+    // 0. todoText: 'Do this until you get it!',
+    // completed: false
+  ],
   displayTodos: function() {
     console.log('My todos: ', this.todos);
   },
