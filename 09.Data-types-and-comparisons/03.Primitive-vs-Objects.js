@@ -1,0 +1,5 @@
+/* 
+  Primitives actually compares the values
+  Objects are references to the values.  Only the exact same Object is equal to itself.
+  
+*/
